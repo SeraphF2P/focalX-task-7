@@ -1,0 +1,37 @@
+import { Comment } from "@/models/Comment";
+import { NextFunction, Request, Response } from "express";
+import { verifyToken } from "../lib/jwt";
+import { User } from "../models/User";
+
+export const checkAutheraizedUserForComment = async (
+  req: Request & { user?: unknown; comment?: unknown },
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const token = req.header("Authorization")?.replace("Bearer ", "");
+    const comment_id = req.params.comment_id;
+    const comment = await Comment.findById(comment_id);
+    if (comment == null) {
+      res.status(404).json({ message: "comment not found" });
+    } else if (!token) {
+      res.status(401).json({ msg: "No token, authorization denied" });
+    } else if (token) {
+      const decoded = verifyToken(token) as { id: string };
+      const user = await User.findById(decoded.id);
+      if (!user) {
+        res.status(404).json({ msg: "User not found" });
+      } else if (comment?.checkAuthUser(user?.id)) {
+        req.user = user;
+        req.comment = comment;
+        next();
+      } else {
+        res
+          .status(401)
+          .json({ message: "you don't have permission to this action" });
+      }
+    }
+  } catch (error) {
+    res.status(401).json({ msg: "Invalid token" });
+  }
+};

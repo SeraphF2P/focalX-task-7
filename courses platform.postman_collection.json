@@ -1,0 +1,382 @@
+{
+	"info": {
+		"_postman_id": "74ad9e04-1208-4258-bee2-b1b49946ad9e",
+		"name": "courses platform",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "37423428"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "regester",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"user 2\",\r\n    \"password\":\"Asdasd13\",\r\n    \"password_confirmation\":\"Asdasd13\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"user 1\",\r\n    \"password\":\"Asdasd13\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/auth/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "course",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MTY3OWQ0YzY4MTRhMzZjN2M2NmVkNyIsInVzZXJOYW1lIjoidXNlciAxIiwiaWF0IjoxNzI5NTI2MjUwLCJleHAiOjE3MzAxMzEwNTB9.5bKg5BQy_TG_LFXZxr9iTnmTW11v7yYJt9RNeXpPqWs"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\":\"description1 description1  description1  description1  description1  description1\",\r\n    \"title\": \"title1 title1 title1 title1\",\r\n    \"duration\":\"2 weeks duration course\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/course"
+					},
+					"response": []
+				},
+				{
+					"name": "edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MTY3OWQ0YzY4MTRhMzZjN2M2NmVkNyIsInVzZXJOYW1lIjoidXNlciAxIiwiaWF0IjoxNzI5NTI2MjUwLCJleHAiOjE3MzAxMzEwNTB9.5bKg5BQy_TG_LFXZxr9iTnmTW11v7yYJt9RNeXpPqWs"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\":\"description1 description1  description1  description1  description1  description3\",\r\n    \"title\": \"title1 title1 title1 title2\",\r\n    \"duration\":\"3 weeks duration course\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/course/6717d64bb7f542c4344f4c3b"
+					},
+					"response": []
+				},
+				{
+					"name": "read",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MTY3OWQ0YzY4MTRhMzZjN2M2NmVkNyIsInVzZXJOYW1lIjoidXNlciAxIiwiaWF0IjoxNzI5NTI2MjUwLCJleHAiOjE3MzAxMzEwNTB9.5bKg5BQy_TG_LFXZxr9iTnmTW11v7yYJt9RNeXpPqWs"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/course/6717d8ab046ff3aa9b128ea6"
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MTY3OWQ0YzY4MTRhMzZjN2M2NmVkNyIsInVzZXJOYW1lIjoidXNlciAxIiwiaWF0IjoxNzI5NTI2MjUwLCJleHAiOjE3MzAxMzEwNTB9.5bKg5BQy_TG_LFXZxr9iTnmTW11v7yYJt9RNeXpPqWs"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/course"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MTY3OWQ0YzY4MTRhMzZjN2M2NmVkNyIsInVzZXJOYW1lIjoidXNlciAxIiwiaWF0IjoxNzI5NTI2MjUwLCJleHAiOjE3MzAxMzEwNTB9.5bKg5BQy_TG_LFXZxr9iTnmTW11v7yYJt9RNeXpPqWs"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:3000/api/course/6717d64bb7f542c4344f4c3b"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "video",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MTY3OWQ0YzY4MTRhMzZjN2M2NmVkNyIsInVzZXJOYW1lIjoidXNlciAxIiwiaWF0IjoxNzI5NTI2MjUwLCJleHAiOjE3MzAxMzEwNTB9.5bKg5BQy_TG_LFXZxr9iTnmTW11v7yYJt9RNeXpPqWs"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\":\"description1 description1  description1  description1  description1  description1\",\r\n    \"title\": \"title1 title1 title1 title1\",\r\n    \"duration\":\"20:40:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/video/6717d8ab046ff3aa9b128ea6"
+					},
+					"response": []
+				},
+				{
+					"name": "edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MTY3OWQ0YzY4MTRhMzZjN2M2NmVkNyIsInVzZXJOYW1lIjoidXNlciAxIiwiaWF0IjoxNzI5NTI2MjUwLCJleHAiOjE3MzAxMzEwNTB9.5bKg5BQy_TG_LFXZxr9iTnmTW11v7yYJt9RNeXpPqWs"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\":\"description1 description1  description1  asdasd  description1  description2\",\r\n    \"title\": \"title1 title1 title1 asdasd\",\r\n    \"duration\":\"30:34:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/video/6717d8bb046ff3aa9b128ead"
+					},
+					"response": []
+				},
+				{
+					"name": "read",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MTY3OWQ0YzY4MTRhMzZjN2M2NmVkNyIsInVzZXJOYW1lIjoidXNlciAxIiwiaWF0IjoxNzI5NTI2MjUwLCJleHAiOjE3MzAxMzEwNTB9.5bKg5BQy_TG_LFXZxr9iTnmTW11v7yYJt9RNeXpPqWs"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/video/6717d8bb046ff3aa9b128ead"
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MTY3OWQ0YzY4MTRhMzZjN2M2NmVkNyIsInVzZXJOYW1lIjoidXNlciAxIiwiaWF0IjoxNzI5NTI2MjUwLCJleHAiOjE3MzAxMzEwNTB9.5bKg5BQy_TG_LFXZxr9iTnmTW11v7yYJt9RNeXpPqWs"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/video"
+					},
+					"response": []
+				},
+				{
+					"name": "get all for a course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MTY3OWQ0YzY4MTRhMzZjN2M2NmVkNyIsInVzZXJOYW1lIjoidXNlciAxIiwiaWF0IjoxNzI5NTI2MjUwLCJleHAiOjE3MzAxMzEwNTB9.5bKg5BQy_TG_LFXZxr9iTnmTW11v7yYJt9RNeXpPqWs"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/video/course/671696abcdb5a0bd08690089"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MTY3OWQ0YzY4MTRhMzZjN2M2NmVkNyIsInVzZXJOYW1lIjoidXNlciAxIiwiaWF0IjoxNzI5NTI2MjUwLCJleHAiOjE3MzAxMzEwNTB9.5bKg5BQy_TG_LFXZxr9iTnmTW11v7yYJt9RNeXpPqWs"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:3000/api/video/671696decdb5a0bd0869009a"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "comment",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MTY3OWQ0YzY4MTRhMzZjN2M2NmVkNyIsInVzZXJOYW1lIjoidXNlciAxIiwiaWF0IjoxNzI5NTI2MjUwLCJleHAiOjE3MzAxMzEwNTB9.5bKg5BQy_TG_LFXZxr9iTnmTW11v7yYJt9RNeXpPqWs"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\":\"asdasd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/comment/6717d8bb046ff3aa9b128ead"
+					},
+					"response": []
+				},
+				{
+					"name": "edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MTY3OWQ0YzY4MTRhMzZjN2M2NmVkNyIsInVzZXJOYW1lIjoidXNlciAxIiwiaWF0IjoxNzI5NTI2MjUwLCJleHAiOjE3MzAxMzEwNTB9.5bKg5BQy_TG_LFXZxr9iTnmTW11v7yYJt9RNeXpPqWs"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\":\"33333\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/comment/6717de44c78abd5b3b31fcb5"
+					},
+					"response": []
+				},
+				{
+					"name": "read",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MTY3OWQ0YzY4MTRhMzZjN2M2NmVkNyIsInVzZXJOYW1lIjoidXNlciAxIiwiaWF0IjoxNzI5NTI2MjUwLCJleHAiOjE3MzAxMzEwNTB9.5bKg5BQy_TG_LFXZxr9iTnmTW11v7yYJt9RNeXpPqWs"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/comment/6717de44c78abd5b3b31fcb5"
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MTY3OWQ0YzY4MTRhMzZjN2M2NmVkNyIsInVzZXJOYW1lIjoidXNlciAxIiwiaWF0IjoxNzI5NTI2MjUwLCJleHAiOjE3MzAxMzEwNTB9.5bKg5BQy_TG_LFXZxr9iTnmTW11v7yYJt9RNeXpPqWs"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/comment"
+					},
+					"response": []
+				},
+				{
+					"name": "get all for a video",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MTY3OWQ0YzY4MTRhMzZjN2M2NmVkNyIsInVzZXJOYW1lIjoidXNlciAxIiwiaWF0IjoxNzI5NTI2MjUwLCJleHAiOjE3MzAxMzEwNTB9.5bKg5BQy_TG_LFXZxr9iTnmTW11v7yYJt9RNeXpPqWs"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/comment/video/6717d8bb046ff3aa9b128ead"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MTY3OWQ0YzY4MTRhMzZjN2M2NmVkNyIsInVzZXJOYW1lIjoidXNlciAxIiwiaWF0IjoxNzI5NTI2MjUwLCJleHAiOjE3MzAxMzEwNTB9.5bKg5BQy_TG_LFXZxr9iTnmTW11v7yYJt9RNeXpPqWs"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:3000/api/comment/6717de44c78abd5b3b31fcb5"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
